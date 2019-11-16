@@ -1,9 +1,0 @@
-#!/usr/bin/env node
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-require("source-map-support/register");
-const cdk = require("@aws-cdk/core");
-const foosball_service_stack_1 = require("../lib/foosball_service-stack");
-const app = new cdk.App();
-new foosball_service_stack_1.FoosballServiceStack(app, 'FoosballServiceStack');
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZm9vc2JhbGxfc2VydmljZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImZvb3NiYWxsX3NlcnZpY2UudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQ0EsdUNBQXFDO0FBQ3JDLHFDQUFzQztBQUN0QywwRUFBcUU7QUFFckUsTUFBTSxHQUFHLEdBQUcsSUFBSSxHQUFHLENBQUMsR0FBRyxFQUFFLENBQUM7QUFDMUIsSUFBSSw2Q0FBb0IsQ0FBQyxHQUFHLEVBQUUsc0JBQXNCLENBQUMsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIiMhL3Vzci9iaW4vZW52IG5vZGVcbmltcG9ydCAnc291cmNlLW1hcC1zdXBwb3J0L3JlZ2lzdGVyJztcbmltcG9ydCBjZGsgPSByZXF1aXJlKCdAYXdzLWNkay9jb3JlJyk7XG5pbXBvcnQgeyBGb29zYmFsbFNlcnZpY2VTdGFjayB9IGZyb20gJy4uL2xpYi9mb29zYmFsbF9zZXJ2aWNlLXN0YWNrJztcblxuY29uc3QgYXBwID0gbmV3IGNkay5BcHAoKTtcbm5ldyBGb29zYmFsbFNlcnZpY2VTdGFjayhhcHAsICdGb29zYmFsbFNlcnZpY2VTdGFjaycpO1xuIl19
