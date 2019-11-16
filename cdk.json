@@ -1,0 +1,3 @@
+{
+  "app": "npx ts-node bin/foosball_service.ts"
+}

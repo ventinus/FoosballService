@@ -1,0 +1,545 @@
+{
+  "version": "1.16.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "FoosballServiceStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "FoosballServiceStack.template.json"
+      },
+      "metadata": {
+        "/FoosballServiceStack": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.b75cd65958c1221f7994c233382199d1ddd241f3b7cc0826b7786ea450c21743",
+              "id": "b75cd65958c1221f7994c233382199d1ddd241f3b7cc0826b7786ea450c21743",
+              "packaging": "zip",
+              "sourceHash": "b75cd65958c1221f7994c233382199d1ddd241f3b7cc0826b7786ea450c21743",
+              "s3BucketParameter": "AssetParametersb75cd65958c1221f7994c233382199d1ddd241f3b7cc0826b7786ea450c21743S3BucketDE654844",
+              "s3KeyParameter": "AssetParametersb75cd65958c1221f7994c233382199d1ddd241f3b7cc0826b7786ea450c21743S3VersionKeyD85DF249",
+              "artifactHashParameter": "AssetParametersb75cd65958c1221f7994c233382199d1ddd241f3b7cc0826b7786ea450c21743ArtifactHash2827C89E"
+            },
+            "trace": [
+              "FoosballServiceStack.addFileAsset (/home/pi/shared/FoosballService/node_modules/@aws-cdk/core/lib/stack.ts:524:17)",
+              "new Asset (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:113:28)",
+              "AssetCode.bind (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-lambda/lib/function.ts:431:29)",
+              "new FoosballService (/home/pi/shared/FoosballService/lib/foosball_service.ts:12:21)",
+              "new FoosballServiceStack (/home/pi/shared/FoosballService/lib/foosball_service-stack.ts:8:5)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/bin/foosball_service.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Module.m._compile (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:530:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:533:12)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "main (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "/home/pi/.nvm/versions/node/v12.13.0/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/FoosballServiceStack/Foosball/Foosball/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Foosball0D770702",
+            "trace": [
+              "new Bucket (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:1000:22)",
+              "new FoosballService (/home/pi/shared/FoosballService/lib/foosball_service.ts:10:20)",
+              "new FoosballServiceStack (/home/pi/shared/FoosballService/lib/foosball_service-stack.ts:8:5)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/bin/foosball_service.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Module.m._compile (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:530:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:533:12)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "main (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "/home/pi/.nvm/versions/node/v12.13.0/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/FoosballServiceStack/Foosball/CreateGameHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FoosballCreateGameHandlerServiceRoleA4B27B4C",
+            "trace": [
+              "new Role (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-iam/lib/role.ts:300:18)",
+              "new Function (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-lambda/lib/function.ts:414:31)",
+              "new FoosballService (/home/pi/shared/FoosballService/lib/foosball_service.ts:12:21)",
+              "new FoosballServiceStack (/home/pi/shared/FoosballService/lib/foosball_service-stack.ts:8:5)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/bin/foosball_service.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Module.m._compile (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:530:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:533:12)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "main (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "/home/pi/.nvm/versions/node/v12.13.0/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/FoosballServiceStack/Foosball/CreateGameHandler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FoosballCreateGameHandlerServiceRoleDefaultPolicy96A0A383",
+            "trace": [
+              "new Policy (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-iam/lib/policy.ts:102:22)",
+              "Role.addToPolicy (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-iam/lib/role.ts:340:28)",
+              "Function.addToPrincipal (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-iam/lib/grant.ts:147:61)",
+              "Function.addToPrincipalOrResource (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-iam/lib/grant.ts:117:26)",
+              "Bucket.grant (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:590:23)",
+              "Bucket.grantReadWrite (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:528:17)",
+              "new FoosballService (/home/pi/shared/FoosballService/lib/foosball_service.ts:21:12)",
+              "new FoosballServiceStack (/home/pi/shared/FoosballService/lib/foosball_service-stack.ts:8:5)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/bin/foosball_service.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Module.m._compile (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:530:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:533:12)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "main (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "/home/pi/.nvm/versions/node/v12.13.0/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/FoosballServiceStack/Foosball/CreateGameHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FoosballCreateGameHandler89C69C73",
+            "trace": [
+              "new Function (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-lambda/lib/function.ts:434:35)",
+              "new FoosballService (/home/pi/shared/FoosballService/lib/foosball_service.ts:12:21)",
+              "new FoosballServiceStack (/home/pi/shared/FoosballService/lib/foosball_service-stack.ts:8:5)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/bin/foosball_service.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Module.m._compile (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:530:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:533:12)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "main (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "/home/pi/.nvm/versions/node/v12.13.0/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/FoosballServiceStack/Foosball/foosball-api/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FoosballfoosballapiBB55B1C1",
+            "trace": [
+              "new RestApi (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:229:22)",
+              "new FoosballService (/home/pi/shared/FoosballService/lib/foosball_service.ts:23:17)",
+              "new FoosballServiceStack (/home/pi/shared/FoosballService/lib/foosball_service-stack.ts:8:5)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/bin/foosball_service.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Module.m._compile (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:530:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:533:12)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "main (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "/home/pi/.nvm/versions/node/v12.13.0/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/FoosballServiceStack/Foosball/foosball-api/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FoosballfoosballapiDeploymentC1ED40FCf2c1e002d5ca73f0d9f574a83c3488da",
+            "trace": [
+              "new Deployment (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-apigateway/lib/deployment.ts:69:21)",
+              "RestApi.configureDeployment (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:387:32)",
+              "new RestApi (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:245:10)",
+              "new FoosballService (/home/pi/shared/FoosballService/lib/foosball_service.ts:23:17)",
+              "new FoosballServiceStack (/home/pi/shared/FoosballService/lib/foosball_service-stack.ts:8:5)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/bin/foosball_service.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Module.m._compile (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:530:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:533:12)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "main (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "/home/pi/.nvm/versions/node/v12.13.0/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/FoosballServiceStack/Foosball/foosball-api/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FoosballfoosballapiDeploymentStageprodB4F148B2",
+            "trace": [
+              "new Stage (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-apigateway/lib/stage.ts:186:22)",
+              "RestApi.configureDeployment (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:397:30)",
+              "new RestApi (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:245:10)",
+              "new FoosballService (/home/pi/shared/FoosballService/lib/foosball_service.ts:23:17)",
+              "new FoosballServiceStack (/home/pi/shared/FoosballService/lib/foosball_service-stack.ts:8:5)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/bin/foosball_service.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Module.m._compile (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:530:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:533:12)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "main (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "/home/pi/.nvm/versions/node/v12.13.0/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/FoosballServiceStack/Foosball/foosball-api/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FoosballfoosballapiEndpointDCBBB4F4",
+            "trace": [
+              "RestApi.configureDeployment (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:402:7)",
+              "new RestApi (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:245:10)",
+              "new FoosballService (/home/pi/shared/FoosballService/lib/foosball_service.ts:23:17)",
+              "new FoosballServiceStack (/home/pi/shared/FoosballService/lib/foosball_service-stack.ts:8:5)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/bin/foosball_service.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Module.m._compile (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:530:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:533:12)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "main (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "/home/pi/.nvm/versions/node/v12.13.0/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/FoosballServiceStack/Foosball/foosball-api/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FoosballfoosballapiCloudWatchRoleF9D36823",
+            "trace": [
+              "new Role (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-iam/lib/role.ts:300:18)",
+              "RestApi.configureCloudWatchRole (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:411:18)",
+              "new RestApi (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:249:12)",
+              "new FoosballService (/home/pi/shared/FoosballService/lib/foosball_service.ts:23:17)",
+              "new FoosballServiceStack (/home/pi/shared/FoosballService/lib/foosball_service-stack.ts:8:5)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/bin/foosball_service.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Module.m._compile (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:530:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:533:12)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "main (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "/home/pi/.nvm/versions/node/v12.13.0/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/FoosballServiceStack/Foosball/foosball-api/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FoosballfoosballapiAccountB5744B55",
+            "trace": [
+              "RestApi.configureCloudWatchRole (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:416:22)",
+              "new RestApi (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:249:12)",
+              "new FoosballService (/home/pi/shared/FoosballService/lib/foosball_service.ts:23:17)",
+              "new FoosballServiceStack (/home/pi/shared/FoosballService/lib/foosball_service-stack.ts:8:5)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/bin/foosball_service.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Module.m._compile (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:530:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:533:12)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "main (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "/home/pi/.nvm/versions/node/v12.13.0/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/FoosballServiceStack/Foosball/foosball-api/Default/POST/ApiPermission.FoosballServiceStackFoosballfoosballapi2ADC98E2.POST..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FoosballfoosballapiPOSTApiPermissionFoosballServiceStackFoosballfoosballapi2ADC98E2POSTB03A2130",
+            "trace": [
+              "Function.addPermission (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:197:5)",
+              "LambdaIntegration.bind (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.ts:60:18)",
+              "Method.renderIntegration (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:189:17)",
+              "new Method (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:130:25)",
+              "RootResource.addMethod (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:175:12)",
+              "new FoosballService (/home/pi/shared/FoosballService/lib/foosball_service.ts:32:14)",
+              "new FoosballServiceStack (/home/pi/shared/FoosballService/lib/foosball_service-stack.ts:8:5)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/bin/foosball_service.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Module.m._compile (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:530:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:533:12)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "main (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "/home/pi/.nvm/versions/node/v12.13.0/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/FoosballServiceStack/Foosball/foosball-api/Default/POST/ApiPermission.Test.FoosballServiceStackFoosballfoosballapi2ADC98E2.POST..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FoosballfoosballapiPOSTApiPermissionTestFoosballServiceStackFoosballfoosballapi2ADC98E2POST682F8D86",
+            "trace": [
+              "Function.addPermission (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:197:5)",
+              "LambdaIntegration.bind (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.ts:68:20)",
+              "Method.renderIntegration (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:189:17)",
+              "new Method (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:130:25)",
+              "RootResource.addMethod (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:175:12)",
+              "new FoosballService (/home/pi/shared/FoosballService/lib/foosball_service.ts:32:14)",
+              "new FoosballServiceStack (/home/pi/shared/FoosballService/lib/foosball_service-stack.ts:8:5)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/bin/foosball_service.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Module.m._compile (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:530:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:533:12)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "main (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "/home/pi/.nvm/versions/node/v12.13.0/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/FoosballServiceStack/Foosball/foosball-api/Default/POST/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FoosballfoosballapiPOSTDC5E6A05",
+            "trace": [
+              "new Method (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:136:22)",
+              "RootResource.addMethod (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:175:12)",
+              "new FoosballService (/home/pi/shared/FoosballService/lib/foosball_service.ts:32:14)",
+              "new FoosballServiceStack (/home/pi/shared/FoosballService/lib/foosball_service-stack.ts:8:5)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/bin/foosball_service.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Module.m._compile (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:530:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:533:12)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "main (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "/home/pi/.nvm/versions/node/v12.13.0/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/FoosballServiceStack/AssetParameters/b75cd65958c1221f7994c233382199d1ddd241f3b7cc0826b7786ea450c21743/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersb75cd65958c1221f7994c233382199d1ddd241f3b7cc0826b7786ea450c21743S3BucketDE654844",
+            "trace": [
+              "new FileAssetParameters (/home/pi/shared/FoosballService/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "FoosballServiceStack.addFileAsset (/home/pi/shared/FoosballService/node_modules/@aws-cdk/core/lib/stack.ts:511:16)",
+              "new Asset (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:113:28)",
+              "AssetCode.bind (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-lambda/lib/function.ts:431:29)",
+              "new FoosballService (/home/pi/shared/FoosballService/lib/foosball_service.ts:12:21)",
+              "new FoosballServiceStack (/home/pi/shared/FoosballService/lib/foosball_service-stack.ts:8:5)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/bin/foosball_service.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Module.m._compile (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:530:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:533:12)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "main (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "/home/pi/.nvm/versions/node/v12.13.0/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/FoosballServiceStack/AssetParameters/b75cd65958c1221f7994c233382199d1ddd241f3b7cc0826b7786ea450c21743/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersb75cd65958c1221f7994c233382199d1ddd241f3b7cc0826b7786ea450c21743S3VersionKeyD85DF249",
+            "trace": [
+              "new FileAssetParameters (/home/pi/shared/FoosballService/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "FoosballServiceStack.addFileAsset (/home/pi/shared/FoosballService/node_modules/@aws-cdk/core/lib/stack.ts:511:16)",
+              "new Asset (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:113:28)",
+              "AssetCode.bind (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-lambda/lib/function.ts:431:29)",
+              "new FoosballService (/home/pi/shared/FoosballService/lib/foosball_service.ts:12:21)",
+              "new FoosballServiceStack (/home/pi/shared/FoosballService/lib/foosball_service-stack.ts:8:5)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/bin/foosball_service.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Module.m._compile (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:530:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:533:12)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "main (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "/home/pi/.nvm/versions/node/v12.13.0/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ],
+        "/FoosballServiceStack/AssetParameters/b75cd65958c1221f7994c233382199d1ddd241f3b7cc0826b7786ea450c21743/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersb75cd65958c1221f7994c233382199d1ddd241f3b7cc0826b7786ea450c21743ArtifactHash2827C89E",
+            "trace": [
+              "new FileAssetParameters (/home/pi/shared/FoosballService/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:36)",
+              "FoosballServiceStack.addFileAsset (/home/pi/shared/FoosballService/node_modules/@aws-cdk/core/lib/stack.ts:511:16)",
+              "new Asset (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:113:28)",
+              "AssetCode.bind (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/home/pi/shared/FoosballService/node_modules/@aws-cdk/aws-lambda/lib/function.ts:431:29)",
+              "new FoosballService (/home/pi/shared/FoosballService/lib/foosball_service.ts:12:21)",
+              "new FoosballServiceStack (/home/pi/shared/FoosballService/lib/foosball_service-stack.ts:8:5)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/bin/foosball_service.ts:7:1)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Module.m._compile (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:530:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Object.require.extensions.<computed> [as .ts] (/home/pi/shared/FoosballService/node_modules/ts-node/src/index.ts:533:12)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "main (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:212:14)",
+              "Object.<anonymous> (/home/pi/shared/FoosballService/node_modules/ts-node/src/bin.ts:470:3)",
+              "Module._compile (internal/modules/cjs/loader.js:956:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)",
+              "Module.load (internal/modules/cjs/loader.js:812:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:724:14)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:1025:10)",
+              "/home/pi/.nvm/versions/node/v12.13.0/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "runtime": {
+    "libraries": {
+      "@aws-cdk/core": "1.16.3",
+      "@aws-cdk/cx-api": "1.16.3",
+      "@aws-cdk/aws-apigateway": "1.16.3",
+      "@aws-cdk/aws-iam": "1.16.3",
+      "@aws-cdk/region-info": "1.16.3",
+      "@aws-cdk/aws-lambda": "1.16.3",
+      "@aws-cdk/aws-cloudwatch": "1.16.3",
+      "@aws-cdk/aws-ec2": "1.16.3",
+      "@aws-cdk/aws-ssm": "1.16.3",
+      "@aws-cdk/aws-sqs": "1.16.3",
+      "@aws-cdk/aws-kms": "1.16.3",
+      "@aws-cdk/aws-s3-assets": "1.16.3",
+      "@aws-cdk/assets": "1.16.3",
+      "@aws-cdk/aws-s3": "1.16.3",
+      "@aws-cdk/aws-events": "1.16.3",
+      "jsii-runtime": "node.js/v12.13.0"
+    }
+  }
+}
