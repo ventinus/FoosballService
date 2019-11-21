@@ -1,3 +1,6 @@
 module.exports = {
-  CreateGame: require('./CreateGame')
+  CreateGame: require('./CreateGame'),
+  FindGame: require('./FindGame'),
+  UpdateGame: require('./UpdateGame'),
+  DeleteGame: require('./DeleteGame')
 }
