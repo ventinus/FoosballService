@@ -7,23 +7,12 @@ module.exports = async (event) => {
   const { httpMethod, body } = event
 
   try {
-    if (httpMethod === "POST") {
+    if (httpMethod === "DELETE") {
       const { gameIdPrefix } = JSON.parse(body)
 
-      const data = {
-        startedAt: new Date(),
-        endedAt: null,
-        t1Score: 0,
-        t2Score: 0
-      }
-    
-      const base64data = new Buffer(data, 'binary')
-
-      await S3.putObject({
+      await S3.deleteObject({
         Bucket: bucketName,
         Key: gameIdPrefix,
-        Body: base64data,
-        ContentType: 'application/json'
       }).promise();
 
       return {
@@ -36,7 +25,7 @@ module.exports = async (event) => {
     return {
       statusCode: 400,
       headers: {},
-      body: "Game was not created."
+      body: "Game was not deleted."
     };
   } catch (error) {
     const body = error.stack || JSON.stringify(error, null, 2);
