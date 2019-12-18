@@ -6,27 +6,26 @@ const bucketName = process.env.BUCKET;
 module.exports = async (event) => {
   const { httpMethod, body } = event
 
-  try {
-    if (httpMethod === "DELETE") {
-      const { gameIdPrefix } = JSON.parse(body)
+  const { competitionId } = JSON.parse(body)
 
-      await S3.deleteObject({
-        Bucket: bucketName,
-        Key: gameIdPrefix,
-      }).promise();
+  try {
+    if (httpMethod === "GET") {
+      if (event.path === "/") {
+        const body = await S3.listObjectsV2({ Bucket: bucketName, Key: competitionId }).promise();
+
+        return {
+          statusCode: 200,
+          headers: {},
+          body: JSON.stringify(body)
+        };
+      }
 
       return {
-        statusCode: 200,
+        statusCode: 400,
         headers: {},
-        body: ''
+        body: "We only accept GET"
       };
     }
-
-    return {
-      statusCode: 400,
-      headers: {},
-      body: "Game was not deleted."
-    };
   } catch (error) {
     const body = error.stack || JSON.stringify(error, null, 2);
     return {

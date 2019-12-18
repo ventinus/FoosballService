@@ -5,7 +5,9 @@
     "foosball_service": "bin/foosball_service.js"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "npm run copysrc && tsc",
+    "copysrc": "rm -rf dist && mkdir dist && cp -r resources/* dist/",
+    "install:prod": "mkdir -p ./dist/node_modules && cp package.json package-lock.json dist/ && npm i --prefix ./dist --production",
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk",

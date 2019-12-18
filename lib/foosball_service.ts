@@ -7,28 +7,103 @@ export class FoosballService extends core.Construct {
   constructor(scope: core.Construct, id: string) {
     super(scope, id);
 
-    const bucket = new s3.Bucket(this, "Foosball");
+    const bucket = new s3.Bucket(this, "Foosball", {
+      publicReadAccess: false
+    });
 
-    const createGameHandler = new lambda.Function(this, "CreateGameHandler", {
+    const lambdaProps = {
       runtime: lambda.Runtime.NODEJS_10_X,
-      code: lambda.Code.asset("resources"),
-      handler: "index.CreateGame",
+      code: lambda.Code.asset("dist"),
+      timeout: core.Duration.seconds(20),
       environment: {
         BUCKET: bucket.bucketName
       }
+    }
+
+    const initializeCompetitionHandler = new lambda.Function(this, "InitializeCompetitionHandler", {
+      ...lambdaProps,
+      handler: "index.InitializeCompetition",
     });
 
-    bucket.grantReadWrite(createGameHandler);
+    const updateCurrentGameHandler = new lambda.Function(this, "UpdateCurrentGameHandler", {
+      ...lambdaProps,
+      handler: "index.UpdateCurrentGame",
+    });
+
+    const deleteCurrentGameHandler = new lambda.Function(this, "DeleteCurrentGameHandler", {
+      ...lambdaProps,
+      handler: "index.DeleteCurrentGame",
+    });
+
+    const finalizeGameHandler = new lambda.Function(this, "FinalizeGameHandler", {
+      ...lambdaProps,
+      handler: "index.FinalizeGame",
+    });
+
+    bucket.grantReadWrite(initializeCompetitionHandler);
+    bucket.grantReadWrite(updateCurrentGameHandler);
+    bucket.grantReadWrite(deleteCurrentGameHandler);
+    bucket.grantReadWrite(finalizeGameHandler);
 
     const api = new apigateway.RestApi(this, "foosball-api", {
       restApiName: "Foosball Service",
       description: "This service serves foosball games."
     });
 
-    const createGameIntegration = new apigateway.LambdaIntegration(createGameHandler, {
-      requestTemplates: { "application/json": '{ "statusCode": "200" }' }
-    });
+    // const initCompetition = competitions.addResource('Initialize/{competitionId}')
+    // const currentGame = competitions.addResource('CurrentGame/{competitionId}')
+    const competitions = api.root.addResource('Competitions')
+    const singleCompetition = competitions.addResource('{competitionId}')
+    const initCompetition = singleCompetition.addResource('Initialize')
+    const currentCompetition = singleCompetition.addResource('Current')
+    const finalizeCompetition = singleCompetition.addResource('Finalize')
 
-    api.root.addMethod("POST", createGameIntegration);
+    // const methodProps = {
+    //   authorizationType: apigateway.AuthorizationType.IAM,
+    // }
+
+    const initializeCompetitionIntegration = new apigateway.LambdaIntegration(initializeCompetitionHandler)
+    initCompetition.addMethod('POST', initializeCompetitionIntegration)
+
+    const updateCurrentGameIntegration = new apigateway.LambdaIntegration(updateCurrentGameHandler)
+    currentCompetition.addMethod('PUT', updateCurrentGameIntegration)
+
+    const deleteCurrentGameIntegration = new apigateway.LambdaIntegration(deleteCurrentGameHandler)
+    currentCompetition.addMethod('DELETE', deleteCurrentGameIntegration)
+
+    const finalizeGameIntegration = new apigateway.LambdaIntegration(finalizeGameHandler)
+    finalizeCompetition.addMethod('PUT', finalizeGameIntegration)
+
+    addCorsOptions(initCompetition)
+    addCorsOptions(currentCompetition)
+    addCorsOptions(finalizeCompetition)
   }
+}
+
+export function addCorsOptions(apiResource: apigateway.IResource) {
+  apiResource.addMethod('OPTIONS', new apigateway.MockIntegration({
+    integrationResponses: [{
+      statusCode: '200',
+      responseParameters: {
+        'method.response.header.Access-Control-Allow-Headers': "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+        'method.response.header.Access-Control-Allow-Origin': "'*'",
+        'method.response.header.Access-Control-Allow-Credentials': "'false'",
+        'method.response.header.Access-Control-Allow-Methods': "'OPTIONS,GET,PUT,POST,DELETE'",
+      },
+    }],
+    passthroughBehavior: apigateway.PassthroughBehavior.NEVER,
+    requestTemplates: {
+      "application/json": "{\"statusCode\": 200}"
+    },
+  }), {
+    methodResponses: [{
+      statusCode: '200',
+      responseParameters: {
+        'method.response.header.Access-Control-Allow-Headers': true,
+        'method.response.header.Access-Control-Allow-Methods': true,
+        'method.response.header.Access-Control-Allow-Credentials': true,
+        'method.response.header.Access-Control-Allow-Origin': true,
+      },
+    }]
+  })
 }

@@ -8,21 +8,27 @@ module.exports = async (event) => {
 
   try {
     if (httpMethod === "POST") {
-      const { gameIdPrefix } = JSON.parse(body)
+      const { competitionId } = JSON.parse(body)
+
+      const currentCompleted = await S3.getObject({
+        Bucket: bucketName,
+        Key: competitionId,
+      }).promise()
 
       const data = {
-        startedAt: new Date(),
-        endedAt: null,
-        t1Score: 0,
-        t2Score: 0
+        completed: currentCompleted,
+        current: {
+          startedAt: new Date(),
+          endedAt: null,
+          t1Score: 0,
+          t2Score: 0
+        }
       }
-    
-      const base64data = new Buffer(data, 'binary')
 
       await S3.putObject({
         Bucket: bucketName,
-        Key: gameIdPrefix,
-        Body: base64data,
+        Key: competitionId,
+        Body: JSON.stringify(data),
         ContentType: 'application/json'
       }).promise();
 
