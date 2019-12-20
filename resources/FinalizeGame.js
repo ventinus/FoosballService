@@ -20,27 +20,28 @@ module.exports = async (event) => {
       const response = await s3.getObject(params).promise();
       const data = JSON.parse(response.Body.toString('utf-8'))
 
-      const updatedBody = {
+      const updatedBody = JSON.stringify({
         completed: [{ ...data.current, ...updates }, ...data.completed],
         current: null
-      }
+      })
 
       await s3.putObject({
         ...params,
-        Body: JSON.stringify(updatedBody),
+        Body: updatedBody,
         ContentType: 'application/json'
       }).promise();
 
       return {
         headers,
         statusCode: 200,
+        body: updatedBody,
       };
     }
 
     return {
       headers,
       statusCode: 400,
-      body: "This endpoint only accepts PUT"
+      body: JSON.stringify({ message: "This endpoint only accepts PUT" })
     };
   } catch (error) {
     const body = error.stack || JSON.stringify(error, null, 2);

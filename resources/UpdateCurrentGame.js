@@ -17,7 +17,7 @@ module.exports = async (event) => {
   }
 
   try {
-    if (httpMethod === "PATCH") {
+    if (httpMethod === "PUT") {
       const result = await applyUpdatesToCurrent(s3, params, updates)
 
       return {
@@ -30,7 +30,7 @@ module.exports = async (event) => {
     return {
       headers,
       statusCode: 400,
-      body: "This endpoint only accepts PATCH"
+      body: JSON.stringify({ message: "This endpoint only accepts PUT" })
     };
   } catch (error) {
     const body = error.stack || JSON.stringify(error, null, 2);

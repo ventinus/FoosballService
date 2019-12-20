@@ -20,14 +20,15 @@ module.exports = async (event) => {
 
       return {
         headers,
-        statusCode: 202,
+        statusCode: 200, // TODO: how to make this respond with 202 (currently throws an internal server error)
+        body: JSON.stringify('')
       }
     }
 
     return {
       headers,
       statusCode: 400,
-      body: "This endpoint only accepts DELETE"
+      body: JSON.stringify({ message: "This endpoint only accepts DELETE" })
     };
   } catch (error) {
     const body = error.stack || JSON.stringify(error, null, 2);

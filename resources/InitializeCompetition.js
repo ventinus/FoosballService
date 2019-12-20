@@ -8,7 +8,7 @@ module.exports = async (event) => {
   const { httpMethod, pathParameters: { competitionId } } = event
 
   try {
-    if (httpMethod === "GET") {
+    if (httpMethod === "POST") {
       let body
       try {
         const response = await s3.getObject({ Bucket: bucketName, Key: competitionId }).promise();
@@ -34,7 +34,7 @@ module.exports = async (event) => {
     return {
       headers,
       statusCode: 400,
-      body: "This endpoint only accepts GET"
+      body: JSON.stringify({ message: "This endpoint only accepts POST" })
     };
   } catch (error) {
     const body = error.stack || JSON.stringify(error, null, 2);
