@@ -12,7 +12,7 @@ module.exports = async (event) => {
 
   const params = {
     Bucket: bucketName,
-    Key: competitionId,
+    Key: `${competitionId}.json`,
   }
 
   try {

@@ -11,7 +11,7 @@ module.exports = async (event) => {
     if (httpMethod === "POST") {
       let body
       try {
-        const response = await s3.getObject({ Bucket: bucketName, Key: competitionId }).promise();
+        const response = await s3.getObject({ Bucket: bucketName, Key: `${competitionId}.json` }).promise();
         body = JSON.parse(response.Body.toString('utf-8'))
       } catch (error) {
         if (error.code !== 'NoSuchKey') throw error
