@@ -5,3 +5,5 @@ bin/*.js
 lib/*.js
 test/*.js
 *.d.ts
+
+/dist
