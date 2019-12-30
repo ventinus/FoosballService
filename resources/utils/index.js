@@ -1,4 +1,3 @@
-
 exports.applyUpdatesToCurrent = async (s3Client, params, updates) => {
   let body
   try {
@@ -41,5 +40,27 @@ exports.applyUpdatesToCurrent = async (s3Client, params, updates) => {
     }).promise();
   }
 
-  return Promise.resolve(body)
+  return body
+}
+
+exports.getPlayers = async (s3Client, params) => {
+  const Key = 'players.json'
+  try {
+    const response = await s3Client.getObject({
+      ...params,
+      Key,
+    }).promise()
+    return JSON.parse(response.Body.toString('utf-8'))
+  } catch (error) {
+    if (error.code !== 'NoSuchKey') throw error
+
+    await s3Client.putObject({
+      ...params,
+      Key,
+      Body: '{}',
+      ContentType: 'application/json'
+    }).promise()
+
+    return {}
+  }
 }

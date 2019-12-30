@@ -20,6 +20,16 @@ export class FoosballService extends core.Construct {
       }
     }
 
+    const findPlayerHandler = new lambda.Function(this, "FindPlayerHandler", {
+      ...lambdaProps,
+      handler: "index.FindPlayer",
+    });
+
+    const addPlayerHandler = new lambda.Function(this, "AddPlayerHandler", {
+      ...lambdaProps,
+      handler: "index.AddPlayer",
+    });
+
     const initializeCompetitionHandler = new lambda.Function(this, "InitializeCompetitionHandler", {
       ...lambdaProps,
       handler: "index.InitializeCompetition",
@@ -40,6 +50,8 @@ export class FoosballService extends core.Construct {
       handler: "index.FinalizeGame",
     });
 
+    bucket.grantReadWrite(findPlayerHandler);
+    bucket.grantReadWrite(addPlayerHandler);
     bucket.grantReadWrite(initializeCompetitionHandler);
     bucket.grantReadWrite(updateCurrentGameHandler);
     bucket.grantReadWrite(deleteCurrentGameHandler);
@@ -50,30 +62,41 @@ export class FoosballService extends core.Construct {
       description: "This service serves foosball games."
     });
 
-    // const initCompetition = competitions.addResource('Initialize/{competitionId}')
-    // const currentGame = competitions.addResource('CurrentGame/{competitionId}')
-    const competitions = api.root.addResource('Competitions')
-    const singleCompetition = competitions.addResource('{competitionId}')
-    const initCompetition = singleCompetition.addResource('Initialize')
-    const currentCompetition = singleCompetition.addResource('Current')
-    const finalizeCompetition = singleCompetition.addResource('Finalize')
+    const players = api.root.addResource('Players');
+    const singlePlayer = players.addResource('{playerId}');
+    const findPlayer = singlePlayer.addResource('Find');
+    const addPlayer = singlePlayer.addResource('Add');
+
+    const competitions = api.root.addResource('Competitions');
+    const singleCompetition = competitions.addResource('{competitionId}');
+    const initCompetition = singleCompetition.addResource('Initialize');
+    const currentCompetition = singleCompetition.addResource('Current');
+    const finalizeCompetition = singleCompetition.addResource('Finalize');
 
     // const methodProps = {
     //   authorizationType: apigateway.AuthorizationType.IAM,
     // }
 
-    const initializeCompetitionIntegration = new apigateway.LambdaIntegration(initializeCompetitionHandler)
-    initCompetition.addMethod('POST', initializeCompetitionIntegration)
+    const findPlayerIntegration = new apigateway.LambdaIntegration(findPlayerHandler);
+    findPlayer.addMethod('GET', findPlayerIntegration);
 
-    const updateCurrentGameIntegration = new apigateway.LambdaIntegration(updateCurrentGameHandler)
-    currentCompetition.addMethod('PUT', updateCurrentGameIntegration)
+    const addPlayerIntegration = new apigateway.LambdaIntegration(addPlayerHandler);
+    addPlayer.addMethod('PUT', addPlayerIntegration);
 
-    const deleteCurrentGameIntegration = new apigateway.LambdaIntegration(deleteCurrentGameHandler)
-    currentCompetition.addMethod('DELETE', deleteCurrentGameIntegration)
+    const initializeCompetitionIntegration = new apigateway.LambdaIntegration(initializeCompetitionHandler);
+    initCompetition.addMethod('POST', initializeCompetitionIntegration);
 
-    const finalizeGameIntegration = new apigateway.LambdaIntegration(finalizeGameHandler)
-    finalizeCompetition.addMethod('PUT', finalizeGameIntegration)
+    const updateCurrentGameIntegration = new apigateway.LambdaIntegration(updateCurrentGameHandler);
+    currentCompetition.addMethod('PUT', updateCurrentGameIntegration);
 
+    const deleteCurrentGameIntegration = new apigateway.LambdaIntegration(deleteCurrentGameHandler);
+    currentCompetition.addMethod('DELETE', deleteCurrentGameIntegration);
+
+    const finalizeGameIntegration = new apigateway.LambdaIntegration(finalizeGameHandler);
+    finalizeCompetition.addMethod('PUT', finalizeGameIntegration);
+
+    addCorsOptions(findPlayer)
+    addCorsOptions(addPlayer)
     addCorsOptions(initCompetition)
     addCorsOptions(currentCompetition)
     addCorsOptions(finalizeCompetition)

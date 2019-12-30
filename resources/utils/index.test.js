@@ -1,4 +1,4 @@
-const { applyUpdatesToCurrent } = require('.')
+const { applyUpdatesToCurrent, getPlayers } = require('.')
 
 class S3Error extends Error {
   constructor() {
@@ -34,7 +34,6 @@ const emptyData = {
 const getBody = fn => fn.mock.calls[0][0].Body
 
 describe('#applyUpdatesToCurrent', () => {
-
   describe('UpdateCurrentGame', () => {
     it('should create a new object with updates when none found', async () => {
       mockS3()
@@ -84,5 +83,20 @@ describe('#applyUpdatesToCurrent', () => {
         current: null
       })
     })
+  })
+})
+
+describe('#getPlayers', () => {
+  it('should create a new object when none found', async () => {
+    mockS3()
+    const data = await getPlayers(s3, {})
+    expect(getBody(s3.putObject)).toBe('{}')
+    expect(data).toEqual({})
+  })
+
+  it('should return the players', async () => {
+    mockS3({ 123: 'foobar' })
+    const data = await getPlayers(s3, {})
+    expect(data).toEqual({ 123: 'foobar' })
   })
 })
