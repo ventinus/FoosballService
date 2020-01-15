@@ -34,7 +34,7 @@ module.exports = async (event) => {
         statusCode: 200,
         body: JSON.stringify({
           alias,
-          id: playerId,
+          id: +playerId,
         })
       };
     }

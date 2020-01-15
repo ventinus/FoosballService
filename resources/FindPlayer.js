@@ -16,7 +16,7 @@ module.exports = async (event) => {
       const players = await getPlayers(s3, params)
 
       const result = {
-        id: playerId,
+        id: +playerId,
         alias: players[playerId],
       }
 
